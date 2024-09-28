@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Login Sencillo</title>
+    <!-- Enlazamos el archivo CSS -->
+    <link rel="stylesheet" href="./style/style.css">
+    <!-- Importamos la fuente desde Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Puedes cambiar "Roboto" por la fuente que prefieras -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Contenedor principal -->
+    <div class="container">
+        <!-- Formulario de login -->
+        <form class="login-form">
+            <h2 class="title">Iniciar Sesión</h2>
+            <!-- Campo de usuario -->
+            <div class="input-field">
+                <input type="text" id="username" required>
+                <label for="username">Usuario</label>
+            </div>
+            <!-- Campo de contraseña -->
+            <div class="input-field">
+                <input type="password" id="password" required>
+                <label for="password">Contraseña</label>
+            </div>
+            <!-- Botón de ingreso -->
+            <button type="submit" class="btn">Ingresar</button>
+        </form>
+    </div>
+</body>
+</html>
