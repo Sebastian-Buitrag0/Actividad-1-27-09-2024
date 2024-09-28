@@ -7,7 +7,7 @@
 
 body, html {
     height: 100%;
-    font-family: 'Roboto', sans-serif; /* Aplicamos la fuente */
+    font-family: 'Roboto', sans-serif;
 }
 
 body {
@@ -23,19 +23,28 @@ body {
     height: 100%;
 }
 
-/* Estilos del formulario de login */
-.login-form {
-    /* Fondo semi-transparente para efecto cristal opaco */
+/* Estilos de los formularios y la sección de usuario */
+.form {
+    position: absolute;
     background: rgba(255, 255, 255, 0.1);
-    /* Efecto de desenfoque de fondo */
     backdrop-filter: blur(10px);
     border-radius: 10px;
     padding: 60px;
     width: 350px;
     text-align: center;
     color: #fff;
-    /* Añadimos una sombra suave */
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    opacity: 0;
+    transform: scale(1.1);
+    z-index: 1;
+}
+
+/* Mostrar el formulario activo */
+.form.active {
+    opacity: 1;
+    transform: scale(1);
+    z-index: 2;
 }
 
 /* Título del formulario */
@@ -59,8 +68,6 @@ body {
     border-bottom: 1px solid rgba(255, 255, 255, 0.7);
     color: #fff;
     font-size: 18px;
-    /* Ocultamos el placeholder predeterminado */
-    caret-color: #fff;
 }
 
 .input-field input:focus {
@@ -103,4 +110,43 @@ body {
 .btn:hover {
     /* Invertimos el degradado al hacer hover */
     background: linear-gradient(to top left, #0000FF, #800080);
+}
+
+/* Estilo del enlace para cambiar de formulario */
+.switch-form {
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+.switch-form a {
+    color: #fff;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+/* Ocultar el formulario no activo */
+.form:not(.active) {
+    pointer-events: none;
+}
+
+/* Estilos para la sección de información del usuario */
+.user-data {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+    text-align: left;
+}
+
+.user-data li {
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+.user-data strong {
+    color: #fff;
+}
+
+/* Estilo para el botón de cerrar sesión */
+#logout-btn {
+    margin-top: 30px;
 }

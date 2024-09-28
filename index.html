@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Login Sencillo</title>
+    <title>Login y Registro Sencillo</title>
     <!-- Enlazamos el archivo CSS -->
     <link rel="stylesheet" href="./style/style.css">
     <!-- Importamos la fuente desde Google Fonts -->
@@ -15,21 +15,61 @@
     <!-- Contenedor principal -->
     <div class="container">
         <!-- Formulario de login -->
-        <form class="login-form">
+        <form id="login-form" class="form active">
             <h2 class="title">Iniciar Sesión</h2>
             <!-- Campo de usuario -->
             <div class="input-field">
-                <input type="text" id="username" required>
-                <label for="username">Usuario</label>
+                <input type="text" id="login-username" required>
+                <label for="login-username">Usuario</label>
             </div>
             <!-- Campo de contraseña -->
             <div class="input-field">
-                <input type="password" id="password" required>
-                <label for="password">Contraseña</label>
+                <input type="password" id="login-password" required>
+                <label for="login-password">Contraseña</label>
             </div>
             <!-- Botón de ingreso -->
             <button type="submit" class="btn">Ingresar</button>
+            <!-- Enlace a registro -->
+            <p class="switch-form">¿No tienes una cuenta? <a href="#" id="go-to-register">Regístrate aquí</a></p>
         </form>
+
+        <!-- Formulario de registro -->
+        <form id="register-form" class="form">
+            <h2 class="title">Registrarse</h2>
+            <!-- Campo de usuario -->
+            <div class="input-field">
+                <input type="text" id="register-username" required>
+                <label for="register-username">Usuario</label>
+            </div>
+            <!-- Campo de contraseña -->
+            <div class="input-field">
+                <input type="password" id="register-password" required>
+                <label for="register-password">Contraseña</label>
+            </div>
+            <!-- Campo de confirmación de contraseña -->
+            <div class="input-field">
+                <input type="password" id="register-confirm-password" required>
+                <label for="register-confirm-password">Confirmar Contraseña</label>
+            </div>
+            <!-- Botón de registro -->
+            <button type="submit" class="btn">Registrarse</button>
+            <!-- Enlace a login -->
+            <p class="switch-form">¿Ya tienes una cuenta? <a href="#" id="go-to-login">Inicia sesión aquí</a></p>
+        </form>
+
+        <!-- Sección para mostrar los datos del usuario después de iniciar sesión -->
+        <div id="user-info" class="form">
+            <h2 class="title">Bienvenido, <span id="display-username"></span></h2>
+            <p>Aquí están tus datos:</p>
+            <ul class="user-data">
+                <li><strong>Nombre de usuario:</strong> <span id="user-username"></span></li>
+                <!-- Añade más datos si es necesario -->
+            </ul>
+            <button id="logout-btn" class="btn">Cerrar Sesión</button>
+        </div>
     </div>
+
+    <!-- Enlazamos el archivo JavaScript -->
+    <script src="./script/script.js"></script>
 </body>
 </html>
